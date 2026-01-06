@@ -51,7 +51,7 @@ const readings = Object.entries(books).flatMap( (b) => {
 
 // Storage
 const DB = {
-	"DBName" : "2025disciple90",
+	"DBName" : year + "reditusmen",
 	"saveConfig" : function(c){
 		localStorage.setItem(this.DBName, JSON.stringify(c));
 	},
