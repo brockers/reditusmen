@@ -110,6 +110,10 @@ When making changes, update the version number in `index.html`:
 <meta name="version" content="3.0.0" />
 ```
 
+### CloudFront Caching
+
+CloudFront will continue to provide your old static files unless to invalidate the current files from the CloudFront Edge services.  To do that, you will need to go to your distribution in CloudFront and create an invalidation.  You can find more details at [Invalidating Files to Remove Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidating-objects-api)
+
 
 ## Technologies Used
 
