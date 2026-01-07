@@ -57,16 +57,43 @@ The app tracks 15 daily practices for 90 days. Data is stored in localStorage as
 4. **Mobile-first design** - Always test responsive behavior
 5. **90-day calculation** - Program starts 90 days before Easter (inclusive)
 
+## Testing
+
+**Running tests:**
+```bash
+# Open test runner in browser
+open tests/test-runner.html  # macOS
+xdg-open tests/test-runner.html  # Linux
+
+# Or serve with any static web server and navigate to /tests/test-runner.html
+python3 -m http.server 8000  # then visit localhost:8000/tests/test-runner.html
+```
+
+**Test Structure:**
+- `tests/test-runner.html` - QUnit test runner page
+- `tests/test-utils.js` - Testing utilities and mock helpers
+- `tests/unit-tests.js` - Unit tests for core functions (dates, weeks, data structures)
+- `tests/integration-tests.js` - Integration tests for localStorage and DOM interactions
+
+**Test Coverage:**
+- Date calculations (Easter date, 90-day period)
+- Week number calculations
+- Data structure validation
+- localStorage persistence
+- DOM element existence
+- Checkbox state management
+- Reading calculations
+
 ## Common Tasks
 
 **Change Easter date:**
-Edit script.js:712 to update the Easter date, which automatically recalculates the entire 90-day period.
+Edit script.js:3 to update the Easter date, which automatically recalculates the entire 90-day period.
 
 **Modify daily practices:**
 The 15 practices are defined in the HTML checkboxes and referenced throughout script.js.
 
 **Debug data issues:**
-Check localStorage with: `JSON.parse(localStorage.getItem('2025disciple90'))`
+Check localStorage with: `JSON.parse(localStorage.getItem('2026reditusmen'))`
 
 **Test calendar heatmap:**
 The heatmap requires actual usage data. Use browser DevTools to inject test data into localStorage.

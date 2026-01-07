@@ -1,6 +1,7 @@
 const today = new Date();
-// Enter Easter and calculate backwards
-const Easter = new Date('4/5/2026');
+// Enter Easter and calculate backwards 
+// MUST BE IN MM/DD/YYYY format to account for timezone issues
+const Easter = new Date('04/05/2026'); 
 const year = Easter.getFullYear();
 // Get our Easter date and set start to 90 days earlier
 const start = new Date(Easter);

@@ -38,6 +38,29 @@ open index.html  # macOS
 xdg-open index.html  # Linux
 ```
 
+### Running Tests
+
+The project includes comprehensive unit and integration tests using QUnit:
+
+```bash
+# Open test runner directly in browser
+open tests/test-runner.html  # macOS
+xdg-open tests/test-runner.html  # Linux
+
+# Or serve with any static web server
+npx http-server  # Then navigate to http://localhost:8080/tests/test-runner.html
+python3 -m http.server 8000  # Then visit http://localhost:8000/tests/test-runner.html
+```
+
+**Test Coverage:**
+- Date calculations (Easter date, 90-day period)
+- Week number calculations
+- Data structure validation
+- localStorage persistence
+- DOM element interactions
+- Checkbox state management
+- Gospel reading calculations
+
 ### Deployment
 
 This application is designed as a static website deployed via AWS infrastructure:

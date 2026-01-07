@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reditus Men - Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    
+    <!-- QUnit Framework -->
+    <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+    
+    <!-- Application Dependencies -->
+    <script src="../d3.v7.min.js"></script>
+    <script src="../popper.js"></script>
+    <script src="../Tooltip.min.js"></script>
+    <script src="../cal-heatmap.min.js"></script>
+    <script src="../flatpickr.min.js"></script>
+    
+    <!-- Mock DOM elements that script.js expects -->
+    <div id="test-fixtures" style="display: none;">
+        <div id="cal-heatmap"></div>
+        <div id="date"></div>
+        <div id="reading"></div>
+        <div id="daynum"></div>
+        <input type="checkbox" id="sl" />
+        <input type="checkbox" id="cs" />
+        <input type="checkbox" id="ex" />
+        <input type="checkbox" id="pc" />
+        <input type="checkbox" id="tv" />
+        <input type="checkbox" id="al" />
+        <input type="checkbox" id="sn" />
+        <input type="checkbox" id="mu" />
+        <input type="checkbox" id="pu" />
+        <input type="checkbox" id="fa" />
+        <input type="checkbox" id="hh" />
+        <input type="checkbox" id="mo" />
+        <input type="checkbox" id="ne" />
+        <input type="checkbox" id="re" />
+        <input type="checkbox" id="ci" />
+        <div id="workout"></div>
+        <input id="datepicker" />
+    </div>
+    
+    <!-- Test Files -->
+    <script src="test-utils.js"></script>
+    <script src="unit-tests.js"></script>
+    <script src="integration-tests.js"></script>
+    
+    <script>
+        // Configure QUnit
+        QUnit.config.autostart = false;
+        
+        // Start tests after DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            QUnit.start();
+        });
+    </script>
+</body>
+</html>
