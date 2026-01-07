@@ -6,50 +6,49 @@ A Progressive Web Application (PWA) for tracking daily spiritual disciplines dur
 
 - **90-Day Tracker**: Automatically calculates and tracks 90 days leading to Easter
 - **Daily Checklist**: Track 15 different spiritual and lifestyle practices
+- **Wed/Fri Fasting Support**: The app only shows the fasting options on Wed and Fri
+- **Workout Counter**: Tracks workouts per week with an indicator for the manditory 3 
 - **Calendar Heatmap**: Visual progress report showing completion patterns
 - **Offline Support**: Full PWA functionality with offline data persistence
 - **Mobile Optimized**: Responsive design that works seamlessly on all devices
 - **Local Storage**: All data stored locally for privacy
+- **No build process required**: Deploy files as-is
+- **PWA manifest**: Built-in, enables installability 
+- **Service worker**: Provides offline functionality
 
 ## Getting Started
-
-### Prerequisites
-
-- Node.js (optional, for development server)
-- Any modern web browser
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:brockers/disciple90.git
-cd disciple90
+git clone git@github.com:brockers/reditusmen.git
+cd reditusmen
 ```
 
 2. **For Development**: Run a local HTTP server using npx:
 ```bash
 npx http-server
 ```
+
+3. Open app
+
 The app will be available at `http://localhost:8080`
 
-3. **Alternative**: Open directly in browser (some features may be limited):
-```bash
-open index.html  # macOS
-xdg-open index.html  # Linux
-```
-
-### Running Tests
+### Testing
 
 The project includes comprehensive unit and integration tests using QUnit:
 
-```bash
-# Open test runner directly in browser
-open tests/test-runner.html  # macOS
-xdg-open tests/test-runner.html  # Linux
+Open test runner directly in browser
 
-# Or serve with any static web server
+```bash
+xdg-open tests/test-runner.html
+```
+
+Or serve with any static web server
+
+```bash 
 npx http-server  # Then navigate to http://localhost:8080/tests/test-runner.html
-python3 -m http.server 8000  # Then visit http://localhost:8000/tests/test-runner.html
 ```
 
 **Test Coverage:**
@@ -71,18 +70,24 @@ This application is designed as a static website deployed via AWS infrastructure
 - **Domain**: Production site running at reditusmen.com
 
 **AWS Deployment Steps:**
-1. Upload all files to S3 bucket maintaining directory structure
+1. Upload the following files to S3 bucket maintaining directory structure
+```
+    disciple90/
+    ├── index.html          # Main application HTML
+    ├── script.js           # Core application logic
+    ├── style.css           # Styling and animations
+    ├── manifest.json       # PWA configuration
+    ├── favicon.ico         # Site icon
+    ├── favicon.svg         # Vector site icon
+    ├── images/            # Icons and screenshots
+    └── *.min.js           # Minified third-party libraries
+```
 2. Ensure bucket has static website hosting enabled
 3. Configure CloudFront distribution to point to S3 origin
 4. Set appropriate cache behaviors for assets
 5. Configure custom domain and SSL certificate
 
 **Key Deployment Considerations:**
-- No build process required - deploy files as-is
-- PWA manifest enables installability
-- Service worker provides offline functionality
-- All paths in manifest.json are absolute from root
-- CloudFront caching improves global performance
 
 ## Configuration
 
@@ -91,7 +96,7 @@ This application is designed as a static website deployed via AWS infrastructure
 The application automatically calculates the 90-day period based on Easter. To update for a new year:
 
 1. Open `script.js`
-2. Find line 712: `const easterDate = new Date('2026-04-05');`
+2. Find line 712: `const easterDate = new Date('04/05/2026');`
 3. Update to the correct Easter date
 4. The app will automatically recalculate all 90 days
 
@@ -99,22 +104,9 @@ The application automatically calculates the 90-day period based on Easter. To u
 
 When making changes, update the version number in `index.html`:
 ```html
-<meta name="version" content="2.1.0" />
+<meta name="version" content="3.0.0" />
 ```
 
-## Project Structure
-
-```
-disciple90/
-├── index.html          # Main application HTML
-├── script.js           # Core application logic
-├── style.css           # Styling and animations
-├── manifest.json       # PWA configuration
-├── favicon.ico         # Site icon
-├── favicon.svg         # Vector site icon
-├── images/            # Icons and screenshots
-└── *.min.js           # Minified third-party libraries
-```
 
 ## Technologies Used
 
@@ -124,31 +116,13 @@ disciple90/
 - **Flatpickr** - Date picker functionality
 - **Progressive Web App** - Installable and offline-capable
 
-## Recent Updates
-
-- **v2.1.0** - Added version tracking for deployment management
-- **2026 Update** - Simplified Easter date configuration for annual updates
-- **Report Screen** - Enhanced calendar heatmap visualization
-- **PWA Improvements** - Fixed loading issues and improved offline support
-
-## Browser Support
-
-Works on all modern browsers with full PWA support:
-- Chrome/Edge 80+
-- Firefox 75+
-- Safari 14+ (iOS/macOS)
-
 ## Data Privacy
 
 All data is stored locally in your browser's localStorage. No data is sent to external servers. Data persists across sessions but can be cleared through browser settings.
 
 ## Contributing
 
-Feel free to submit issues and pull requests. The project uses a simple architecture with no build process, making it easy to contribute.
-
-## License
-
-This project is designed for the Reditus Men's group participating in the Exodus 90 spiritual exercise program.
+Feel free to submit issues and pull requests via Github. The project uses a simple architecture with no build process, making it easy to contribute.
 
 ## Support
 
