@@ -1,11 +1,14 @@
 # Reditus Men - 90 Day Checklist
 
-A Progressive Web Application (PWA) for tracking daily spiritual disciplines during the 90-day Exodus 90 program leading up to Easter. This app helps participants maintain accountability by tracking 15 different daily practices including prayer, fasting, cold showers, and spiritual reading.  The Production website can be found at reditusmen.com
+A Progressive Web Application (PWA) for tracking daily spiritual disciplines during the 90-day Exodus 90 program leading up to Easter. This app helps participants maintain accountability by tracking 15 different daily practices including prayer, fasting, cold showers, and spiritual reading.  
+
+A free to use production website can be found at [reditusmen.com](https://reditusmen.com).
 
 ## Features
 
 - **90-Day Tracker**: Automatically calculates and tracks 90 days leading to Easter
 - **Daily Checklist**: Track 15 different spiritual and lifestyle practices
+- **Reditus Men Dailing Readings**: Complete all 4 Gospels over the course of 90 days
 - **Wed/Fri Fasting Support**: The app only shows the fasting options on Wed and Fri
 - **Workout Counter**: Tracks workouts per week with an indicator for the manditory 3 
 - **Calendar Heatmap**: Visual progress report showing completion patterns
